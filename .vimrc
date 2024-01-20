@@ -50,3 +50,6 @@ set noerrorbells visualbell t_vb=
 " 启用鼠标
 set mouse+=a
 
+" 启用退出二次确认
+set confirm
+
