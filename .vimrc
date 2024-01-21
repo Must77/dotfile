@@ -11,7 +11,7 @@ set shortmess+=I
 set number
 set relativenumber
 
-" Always show the status line at the bottom, even if you only have one window open.
+" Always show the status line at the bottom
 set laststatus=2
 
 " Anytime backspace
@@ -25,8 +25,10 @@ set ignorecase
 set smartcase
 
 " keyboard
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
-inoremap jk <ESC>  " jk --> <ESC>
+" 'Q' in normal mode enters Ex mode
+nmap Q <Nop>
+" jk --> <ESC>
+inoremap jk <ESC>  
 
 " annoyed bell
 set noerrorbells visualbell t_vb=
