@@ -1,5 +1,7 @@
-" Vim-Only
 set nocompatible
+
+" Pay attention!
+" Ctrl+V: Block Visual Mode
 
 " Turn on syntax highlighting.
 syntax on
