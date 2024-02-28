@@ -22,6 +22,9 @@ set backspace=indent,eol,start
 " hide buffer
 set hidden
 
+" display tab as two space width
+set tabstop=2
+
 " case-insensitive
 set ignorecase
 set smartcase
