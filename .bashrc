@@ -2,9 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Only one tmux session
-alias tamux='tmux new-session -A -s main'
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
