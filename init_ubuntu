@@ -1,0 +1,45 @@
+# easyuse
+sudo apt install curl git htop maven mc screen tmux ufw vim smplayer wireshark telnet-ssl qbittorrent bison
+
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# g for golang version manager
+curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
+cat << 'EOF' >> ~/.bashrc
+# Check if the alias 'g' exists before trying to unalias it
+if [[ -n $(alias g 2>/dev/null) ]]; then
+    unalias g
+fi
+EOF
+source "$HOME/.g/env"
+	
+# easyuse base nodejs and go
+npm install -g tldr
+go install github.com/kkdai/youtube/v2/cmd/youtubedr@latest
+
+# ventoy
+wget https://github.com/ventoy/Ventoy/releases/download/v1.1.07/ventoy-1.1.07-linux.tar.gz
+
+# apt install with TUI confirm
+sudo apt install nmap
+
+#========================
+# code develop
+sudo apt install redis 
+
+# GUI vscode dbeaver
+wget https://code.visualstudio.com/docs/?dv=linux64_deb
+wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+	
+#=========================
+# office
+	
+# wechat
+wget https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb
+
+
+
+
+
+
