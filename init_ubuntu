@@ -1,5 +1,6 @@
 # easyuse
-sudo apt install curl git htop maven mc screen tmux ufw vim smplayer telnet-ssl qbittorrent bison nmap fcitx5-pinyin
+sudo apt update -y
+sudo apt install -y curl git htop maven mc screen tmux ufw vim smplayer telnet-ssl qbittorrent bison nmap avahi-daemon avahi-utils
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -13,12 +14,14 @@ if [[ -n $(alias g 2>/dev/null) ]]; then
 fi
 EOF
 source "$HOME/.g/env"
-	
+
+#=========================
+
 # easyuse base nodejs and go
 nvm install 22
-#g ls-remote
-#g install XXXX
+g install $(g ls-remote | tail -n 1)
 npm install -g tldr
+tldr tldr &
 go install github.com/kkdai/youtube/v2/cmd/youtubedr@latest
 
 # ventoy
@@ -27,34 +30,22 @@ wget https://github.com/ventoy/Ventoy/releases/download/v1.1.07/ventoy-1.1.07-li
 # apt install with TUI confirm
 sudo apt install wireshark
 
-# NO SNAP
-sudo snap remove firefox
-wget 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US'
-
-# chinese input
-sudo apt install fcitx5 fcitx5-chinese-addons fcitx5-frontend-gtk3 fcitx5-frontend-gtk2 fcitx5-frontend-qt5
-
-#========================
-# code develop
-sudo apt install redis 
-
-# GUI vscode dbeaver
-wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-	
 #=========================
-# office
+# .deb
 	
 # wechat
-wget https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb
+wget 'https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb'
 
 # chrome 
-wget 'https://www.google.com/intl/en_au/chrome/next-steps.html?brand=OZZY&gclid=EAIaIQobChMIioKVr7u8kAMVuiNECB08bSDhEAAYASABEgJS3_D_BwE&statcb=0&installdataindex=empty&defaultbrowser=0#'
+wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
 # WPS
 wget 'https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11723/wps-office_11.1.0.11723.XA_amd64.deb'
 
+# vscode
+wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
+# dbeaver
+wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 
-
-
+sudo dpkg -i *.deb
