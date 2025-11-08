@@ -1,6 +1,11 @@
+#!/bin/bash
+set -euo pipefail
 # easyuse
 sudo apt update -y
-sudo apt install -y wget curl git htop maven mc screen tmux ufw vim smplayer telnet-ssl qbittorrent bison nmap avahi-daemon avahi-utils g++ openssh-server
+sudo apt install -y wget curl git htop mc screen tmux ufw vim smplayer telnet-ssl qbittorrent bison nmap avahi-daemon avahi-utils g++ openssh-server
+
+# easy DevOps
+sudo apt install -y redis-server maven
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -49,6 +54,9 @@ wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 # dbeaver
 wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+
+# apifox
+wget "https://file-assets.apifox.com/download/Apifox-linux-deb-latest.zip" && unzip Apifox-linux-deb-latest.zip && rm Apifox-linux-deb-latest.zip
 
 sudo dpkg -i *.deb
 
