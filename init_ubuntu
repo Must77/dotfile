@@ -2,10 +2,10 @@
 set -euo pipefail
 # easyuse
 sudo apt update -y
-sudo apt install -y wget curl git htop mc screen tmux ufw vim smplayer telnet-ssl qbittorrent bison nmap avahi-daemon avahi-utils g++ openssh-server
+sudo apt install -y wget curl git htop mc screen tmux ufw vim smplayer telnet-ssl qbittorrent bison nmap avahi-daemon avahi-utils g++ openssh-server net-tools build-essential 
 
 # easy DevOps
-sudo apt install -y redis-server maven
+sudo apt install -y redis-server maven mysql-client python3.12-venv
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -45,9 +45,6 @@ wget 'https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb'
 
 # chrome 
 wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-
-# WPS
-wget 'https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11723/wps-office_11.1.0.11723.XA_amd64.deb'
 
 # vscode
 wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
