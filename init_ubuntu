@@ -2,8 +2,11 @@
 set -euo pipefail
 # easyuse util
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison avahi-daemon avahi-utils g++ net-tools build-essential openssh-server
-sudo apt install -y smplayer qbittorrent nmap
+sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server
+sudo apt install -y smplayer qbittorrent 
+
+# easyuse network
+sudo apt install -y nmap arping net-tools avahi-daemon avahi-utils
 
 # easy DevOps
 sudo apt install -y redis-server maven mysql-client 
