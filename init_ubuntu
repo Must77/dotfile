@@ -2,7 +2,7 @@
 set -euo pipefail
 # easyuse util
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake
+sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate
 sudo apt install -y smplayer qbittorrent 
 
 # easyuse network
