@@ -24,6 +24,11 @@ set hidden
 
 " display tab as two space width
 set tabstop=2
+set shiftwidth=2
+set expandtab 
+
+" inherit tab
+set autoindent 
 
 " case-insensitive
 set ignorecase
