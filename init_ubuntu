@@ -29,6 +29,10 @@ source "$HOME/.g/env"
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
+# use vim plz
+sudo update-alternatives --set editor /usr/bin/vim || sudo update-alternatives --config editor
+echo 'export EDITOR=vim' >> ~/.bashrc
+echo 'export VISUAL=vim' >> ~/.bashrc
 #=========================
 
 # easyuse base nodejs and 
