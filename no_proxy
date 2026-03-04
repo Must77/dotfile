@@ -1,0 +1,2 @@
+unset -v all_proxy http_proxy https_proxy
+unset -v ALL_PROXY HTTP_PROXY HTTPS_PROXY
