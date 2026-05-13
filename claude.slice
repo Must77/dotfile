@@ -1,0 +1,5 @@
+[Slice]
+Description=Claude Code memory limit
+MemoryMax=5.5G
+MemoryHigh=4G
+MemorySwapMax=1G

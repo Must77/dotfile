@@ -1,0 +1,5 @@
+alias kimi="kimi --yolo"
+alias codex="codex --yolo"
+alias claude="systemd-run --user --slice=claude.slice --scope -- claude --dangerously-skip-permissions"
+alias cluade="systemd-run --user --slice=claude.slice --scope -- claude --dangerously-skip-permissions"
+alias na="nautilus . &"
