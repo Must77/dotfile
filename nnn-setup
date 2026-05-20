@@ -24,7 +24,7 @@ export NNN_PLUG='p:preview-tui'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 export NNN_TERMINAL="tmux"
-export NNN_PAGER="batcat --paging=always --style=plain"
+export NNN_PAGER="less -R"
 EOF
 
 echo "nnn setup done. Run 'source ~/.bashrc' to apply."
