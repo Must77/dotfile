@@ -4,9 +4,9 @@ set -euo pipefail
 # nnn file manager setup
 sudo apt install -y nnn bat tree highlight mediainfo
 
-# On Ubuntu, bat binary is called 'batcat'
+# On Ubuntu, bat binary is called 'batcat', symlink so plugins/scripts can find it
 if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
-    echo "alias bat='batcat'" >> ~/.bashrc
+    sudo ln -sf /usr/bin/batcat /usr/local/bin/bat
 fi
 
 # Install nnn plugins (preview-tui etc.)
