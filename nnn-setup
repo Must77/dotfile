@@ -1,0 +1,31 @@
+#!/bin/bash
+set -euo pipefail
+
+# nnn file manager setup
+sudo apt install -y nnn bat tree highlight mediainfo
+
+# On Ubuntu, bat binary is called 'batcat'
+if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
+    echo "alias bat='batcat'" >> ~/.bashrc
+fi
+
+# Install nnn plugins (preview-tui etc.)
+# Uses proxy if available
+export http_proxy="${http_proxy:-}" https_proxy="${https_proxy:-}"
+curl -fsSL https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs -o /tmp/getplugs.sh
+bash /tmp/getplugs.sh
+rm -f /tmp/getplugs.sh
+
+# nnn environment config
+cat << 'EOF' >> ~/.bashrc
+
+# nnn file manager
+export NNN_PLUG='p:preview-tui'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
+export NNN_TERMINAL="tmux"
+export NNN_PAGER="batcat --paging=always --style=plain"
+EOF
+
+echo "nnn setup done. Run 'source ~/.bashrc' to apply."
+echo "Usage: nnn -> ;p to toggle preview panel, Tab to switch panes."
