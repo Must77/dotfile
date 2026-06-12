@@ -1,15 +1,22 @@
 #!/bin/bash
 set -euo pipefail
+# Vim tip: with cursor on any command line below, run :.w !bash to execute it.
 # easyuse util
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd
 
-# easyuse network
-sudo apt install -y nmap arping net-tools avahi-daemon avahi-utils
+# lightweight network
+sudo apt install -y tcpdump net-tools avahi-daemon avahi-utils
+
+# heavy network (wireshark intentionally without -y for its TUI)
+sudo apt install -y nmap arping
+sudo apt install wireshark
 
 # easy DevOps
-sudo apt install -y redis-server maven mysql-client 
 sudo apt install -y python3.12-venv
+
+# java dev (not needed on lightweight terminal machines)
+sudo apt install -y redis-server maven mysql-client
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -37,14 +44,11 @@ echo 'export VISUAL=vim' >> ~/.bashrc
 # easyuse base nodejs and 
 nvm install 22
 npm install -g tldr
-tldr tldr &
+tldr --update
 
 # easyuse base go
 g install $(g ls-remote | tail -n 1)
 go install github.com/kkdai/youtube/v2/cmd/youtubedr@latest
-
-# apt install with TUI confirm
-sudo apt install wireshark
 
 #=========================
 # .deb

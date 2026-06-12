@@ -1,2 +1,2 @@
-unset -v all_proxy http_proxy https_proxy
-unset -v ALL_PROXY HTTP_PROXY HTTPS_PROXY
+unset -v all_proxy http_proxy https_proxy ftp_proxy rsync_proxy no_proxy
+unset -v ALL_PROXY HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY NO_PROXY

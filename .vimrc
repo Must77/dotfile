@@ -68,6 +68,12 @@ set hlsearch
 " don't wrap searches around end of file
 set nowrapscan
 
+" ensure temp directories exist before enabling backup/undo
+silent! call mkdir(expand('~/.vim/files/backup'), 'p')
+silent! call mkdir(expand('~/.vim/files/swap'), 'p')
+silent! call mkdir(expand('~/.vim/files/undo'), 'p')
+silent! call mkdir(expand('~/.vim/files/info'), 'p')
+
 " centralize temp files
 set backup
 set backupdir   =~/.vim/files/backup//
