@@ -2,7 +2,7 @@
 set -euo pipefail
 # easyuse util
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat
+sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd
 
 # easyuse network
 sudo apt install -y nmap arping net-tools avahi-daemon avahi-utils
