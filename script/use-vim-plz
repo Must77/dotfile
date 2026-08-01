@@ -1,0 +1,3 @@
+sudo update-alternatives --set editor /usr/bin/vim || sudo update-alternatives --config editor
+echo 'export EDITOR=vim' >> ~/.bashrc
+echo 'export VISUAL=vim' >> ~/.bashrc

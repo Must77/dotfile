@@ -1,84 +1,18 @@
-#!/bin/bash
-set -euo pipefail
-# Vim tip: with cursor on any command line below, run :.w !bash to execute it.
-# easyuse util
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-# lightweight network
-sudo apt install -y tcpdump net-tools avahi-daemon avahi-utils
+if (( $# == 0 )); then
+    sudo apt update
+    sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd unzip tcpdump net-tools avahi-daemon avahi-utils python3
+    sudo systemctl enable --now ssh
 
-# heavy network (wireshark intentionally without -y for its TUI)
-sudo apt install -y nmap arping
-sudo apt install wireshark
-
-# easy DevOps
-sudo apt install -y python3.12-venv
-
-# java dev (not needed on lightweight terminal machines)
-sudo apt install -y redis-server maven mysql-client
-
-# nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-
-# g for golang version manager
-curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
-cat << 'EOF' >> ~/.bashrc
-# Check if the alias 'g' exists before trying to unalias it
-if [[ -n $(alias g 2>/dev/null) ]]; then
-    unalias g
+    export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+    curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    source "$NVM_DIR/nvm.sh"
+    nvm install 22
+    npm install -g tldr
+    tldr --update
+    exit
 fi
-EOF
-source "$HOME/.g/env"
 
-# ssh-server
-sudo systemctl enable ssh
-sudo systemctl start ssh
-
-# use vim plz
-sudo update-alternatives --set editor /usr/bin/vim || sudo update-alternatives --config editor
-echo 'export EDITOR=vim' >> ~/.bashrc
-echo 'export VISUAL=vim' >> ~/.bashrc
-#=========================
-
-# easyuse base nodejs and 
-nvm install 22
-npm install -g tldr
-tldr --update
-
-# easyuse base go
-g install $(g ls-remote | tail -n 1)
-go install github.com/kkdai/youtube/v2/cmd/youtubedr@latest
-
-#=========================
-# .deb
-	
-# wechat
-wget 'https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb'
-
-# chrome 
-wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-
-# vscode
-wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-
-# dbeaver
-wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-
-# apifox
-wget "https://file-assets.apifox.com/download/Apifox-linux-deb-latest.zip" && unzip Apifox-linux-deb-latest.zip && rm Apifox-linux-deb-latest.zip
-
-sudo dpkg -i *.deb
-
-#===========================
-# zotero
-sudo mkdir -p /opt/zotero
-sudo wget -P /opt/zotero -i "https://download.zotero.org/client/release/7.0.27/Zotero-7.0.27_linux-x86_64.tar.bz2"
-sudo tar xf Zotero-7.0.27_linux-x86_64.tar.bz2  -C /opt/zotero --strip-components=1
-cd /opt/zotero/
-sudo ./set_launcher_icon
-ln -s /opt/zotero/zotero.desktop ~/.local/share/applications/zotero.desktop
-cd ~/Downloads
-
-# ventoy
-wget https://github.com/ventoy/Ventoy/releases/download/v1.1.07/ventoy-1.1.07-linux.tar.gz
+exec python3 bootstrap_cli.py "$@"

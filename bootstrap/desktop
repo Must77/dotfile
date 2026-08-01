@@ -1,0 +1,10 @@
+# wechat
+wget -O wechat.deb 'https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb'
+
+# chrome
+wget -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+
+# vscode
+wget -O vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+
+sudo apt install -y ./wechat.deb ./chrome.deb ./vscode.deb

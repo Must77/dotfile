@@ -1,0 +1,2 @@
+# java dev (not needed on lightweight terminal machines)
+sudo apt install -y redis-server maven mysql-client

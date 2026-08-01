@@ -1,0 +1,18 @@
+zotero_version="7.0.27"
+zotero_tmp_dir="$(mktemp -d)"
+zotero_archive="$zotero_tmp_dir/zotero.tar.bz2"
+
+curl -fL \
+    "https://download.zotero.org/client/release/$zotero_version/Zotero-${zotero_version}_linux-x86_64.tar.bz2" \
+    -o "$zotero_archive"
+
+sudo mkdir -p /opt/zotero
+sudo tar -xjf "$zotero_archive" -C /opt/zotero --strip-components=1
+(
+    cd /opt/zotero
+    sudo ./set_launcher_icon
+)
+
+mkdir -p "$HOME/.local/share/applications"
+ln -sfn /opt/zotero/zotero.desktop "$HOME/.local/share/applications/zotero.desktop"
+rm -r "$zotero_tmp_dir"

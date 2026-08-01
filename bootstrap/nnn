@@ -1,6 +1,3 @@
-#!/bin/bash
-set -euo pipefail
-
 # nnn file manager setup
 sudo apt install -y nnn bat tree highlight mediainfo
 
@@ -10,13 +7,8 @@ if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
 fi
 
 # Install nnn plugins (preview-tui etc.)
-# Uses proxy if available
-export http_proxy="${http_proxy:-}" https_proxy="${https_proxy:-}"
-curl -fsSL https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs -o /tmp/getplugs.sh
-bash /tmp/getplugs.sh
-rm -f /tmp/getplugs.sh
+curl -fsSL https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | bash
 
-# nnn environment config
 cat << 'EOF' >> ~/.bashrc
 
 # nnn file manager

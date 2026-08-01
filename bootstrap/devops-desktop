@@ -1,0 +1,10 @@
+# dbeaver
+wget -O dbeaver.deb https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+sudo apt install -y ./dbeaver.deb
+
+# apifox
+wget -O apifox.zip "https://file-assets.apifox.com/download/Apifox-linux-deb-latest.zip"
+apifox_deb="$(unzip -Z1 apifox.zip '*.deb')"
+unzip apifox.zip "$apifox_deb"
+sudo apt install -y "./$apifox_deb"
+rm apifox.zip
