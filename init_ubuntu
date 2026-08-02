@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 if (( $# == 0 )); then
     sudo apt update
-    sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd unzip tcpdump net-tools avahi-daemon avahi-utils python3
+    sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd unzip tcpdump net-tools avahi-daemon avahi-utils python3 tree sshpass
     sudo systemctl enable --now ssh
 
     export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
