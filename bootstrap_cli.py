@@ -1,45 +1,28 @@
 #!/usr/bin/env python3
+import argparse
 import subprocess
-import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-HELP = """usage: ./init_ubuntu [--target=NAME] [--download=NAME] [--script=NAME]
 
-  --target=NAME  run bootstrap/NAME
-  --download=NAME  run download/NAME
-  --script=NAME  run script/NAME
-  -h, --help     show this help
-"""
+def path_type(folder):
+    return lambda name: ROOT / folder / name
 
-
-args = sys.argv[1:]
-if not args:
-    print(HELP, end="")
-    raise SystemExit
-
-paths = []
-for arg in args:
-    if arg in ("-h", "--help"):
-        print(HELP, end="")
-        raise SystemExit
-    if arg.startswith("--target="):
-        directory, name = "bootstrap", arg.split("=", 1)[1]
-    elif arg.startswith("--download="):
-        directory, name = "download", arg.split("=", 1)[1]
-    elif arg.startswith("--script="):
-        directory, name = "script", arg.split("=", 1)[1]
-    else:
-        raise SystemExit(f"unknown argument: {arg}\n\n{HELP}")
-
-    path = ROOT / directory / name
-    if not name or name.startswith(".") or Path(name).name != name or not path.is_file():
-        raise SystemExit(f"unknown {directory} entry: {name}")
-    paths.append(path)
-
-shell = 'for file in "$@"; do echo "==> Running $file"; source "$file"; done'
-subprocess.run(
-    ["bash", "-Eeuo", "pipefail", "-c", shell, "init_ubuntu", *map(str, paths)],
-    check=True,
+parser = argparse.ArgumentParser(prog="./init_ubuntu")
+parser.add_argument(
+    "--target", dest="paths", action="append", type=path_type("bootstrap")
 )
+parser.add_argument(
+    "--download", dest="paths", action="append", type=path_type("download")
+)
+parser.add_argument(
+    "--script", dest="paths", action="append", type=path_type("scripts")
+)
+paths = parser.parse_args().paths or []
+
+for path in paths:
+    print(f"==> Running {path}", flush=True)
+    returncode = subprocess.call(["bash", "-Eeuo", "pipefail", str(path)])
+    if returncode:
+        raise SystemExit(returncode)
