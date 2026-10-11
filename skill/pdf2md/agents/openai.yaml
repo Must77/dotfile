@@ -1,0 +1,4 @@
+interface:
+  display_name: "PDF Paper Translator"
+  short_description: "Organize and translate academic PDFs"
+  default_prompt: "Use $pdf2md to organize and translate this academic PDF into a bilingual reading folder."

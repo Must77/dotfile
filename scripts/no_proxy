@@ -1,2 +1,9 @@
 unset -v all_proxy http_proxy https_proxy ftp_proxy rsync_proxy no_proxy
 unset -v ALL_PROXY HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY NO_PROXY
+
+if (return 0 2>/dev/null); then
+    :
+else
+    echo "no_proxy: no effect on this shell — use 'source no_proxy' or 'no_proxy' (alias) instead of './no_proxy'" >&2
+    exit 1
+fi

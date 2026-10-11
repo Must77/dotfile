@@ -1,0 +1,7 @@
+OPTIONS=msghistory:200,msg_window:reversed
+
+OPTIONS=color
+
+OPTIONS=time
+
+MSGTYPE=hide "You swap places with your .*"
