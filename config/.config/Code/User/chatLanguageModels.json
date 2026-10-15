@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Volcano Engine Ark",
+    "vendor": "customendpoint",
+    "apiType": "chat-completions",
+    "apiKey": "REPLACE_WITH_YOUR_ARK_API_KEY",
+    "models": [
+      {
+        "id": "glm-5.3",
+        "name": "GLM 5.3",
+        "url": "https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 1024000,
+        "maxOutputTokens": 65536,
+        "supportsReasoningEffort": ["high", "max"],
+        "defaultReasoningEffort": "max"
+      },
+      {
+        "id": "glm-5.3-flash",
+        "name": "GLM 5.3 Flash",
+        "url": "https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions",
+        "toolCalling": true,
+        "vision": true,
+        "maxInputTokens": 1024000,
+        "maxOutputTokens": 65536,
+        "supportsReasoningEffort": ["high", "max"],
+        "defaultReasoningEffort": "high"
+      },
+      {
+        "id": "deepseek-v4-flash",
+        "name": "DeepSeek V4 Flash",
+        "url": "https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 1024000,
+        "maxOutputTokens": 65536,
+        "supportsReasoningEffort": ["high", "max"],
+        "defaultReasoningEffort": "high"
+      },
+      {
+        "id": "deepseek-v4-pro",
+        "name": "DeepSeek V4 Pro",
+        "url": "https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 1024000,
+        "maxOutputTokens": 65536,
+        "supportsReasoningEffort": ["high", "max"],
+        "defaultReasoningEffort": "high"
+      },
+      {
+        "id": "kimi-k2.7-code",
+        "name": "Kimi K2.8 Preview",
+        "url": "https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions",
+        "toolCalling": true,
+        "vision": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 32000,
+        "supportsReasoningEffort": ["high", "max"],
+        "defaultReasoningEffort": "max"
+      }
+    ]
+  }
+]

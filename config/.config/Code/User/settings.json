@@ -1,0 +1,6 @@
+{
+  "chat.agentHost.byokModels.enabled": true,
+  "chat.byokUtilityModelDefault": "mainAgent",
+  "chat.utilityModel": "customendpoint/glm-5.3-flash",
+  "chat.utilitySmallModel": "customendpoint/glm-5.3-flash"
+}

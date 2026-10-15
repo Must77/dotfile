@@ -1,0 +1,9 @@
+{
+  "keybinds": {
+    "input.buffer.end": "end",
+    "input.buffer.home": "home",
+    "session.last": "none",
+    "session.first": "none",
+    "app.exit": "<leader>q"
+  }
+}
