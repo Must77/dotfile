@@ -1,0 +1,12 @@
+# 用法: source scripts/clash_proxy   开启 CLI 代理
+export NODE_USE_ENV_PROXY=1
+#       source scripts/clash_proxy_off  关闭
+export http_proxy=http://127.0.0.1:7897
+export https_proxy=http://127.0.0.1:7897
+export HTTP_PROXY=http://127.0.0.1:7897
+export HTTPS_PROXY=http://127.0.0.1:7897
+export all_proxy=http://127.0.0.1:7897
+export ALL_PROXY=http://127.0.0.1:7897
+export no_proxy="localhost,127.0.0.1,::1,10.*,192.168.*,172.16.*,172.17.*,172.18.*,172.19.*,172.20.*,172.21.*,172.22.*,172.23.*,172.24.*,172.25.*,172.26.*,172.27.*,172.28.*,172.29.*,172.30.*,172.31.*"
+export NO_PROXY="$no_proxy"
+echo "CLI 代理已开启: 127.0.0.1:7897 (局域网/本地直连)"
