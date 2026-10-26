@@ -1,41 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
+  "providers": {
     "ark": {
-      "npm": "@ai-sdk/openai",
-      "name": "Volcano Engine（Responses API）",
-      "options": {
-        "baseURL": "https://ark.cn-beijing.volces.com/api/plan/v3",
-        "apiKey": "REPLACE_WITH_YOUR_ARK_API_KEY"
+      "name": "magpie",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "baseURL": "https://must77.me:9500/v1",
+        "apiKey": "REPLACE_WITH_YOUR_MAGPIE_KEY"
       },
       "models": {
-        "glm-5.3": {
+        "group/glm-5.3": {
           "name": "glm-5.3",
-          "limit": {
-            "context": 1024000,
-            "output": 65536
-          },
-          "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        },
-        "glm-5.3-flash": {
-          "name": "glm-5.3-flash",
-          "limit": {
-            "context": 1024000,
-            "output": 65536
-          },
-          "modalities": {
+          "capabilities": {
+            "tools": true,
             "input": [
               "text",
               "image"
@@ -43,37 +20,128 @@
             "output": [
               "text"
             ]
-          }
-        },
-        "deepseek-v4-flash": {
-          "name": "deepseek-v4-flash",
+          },
           "limit": {
-            "context": 1024000,
-            "output": 65536
-          }
+            "context": 1000000,
+            "output": 131072
+          },
+          "body": {
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
         },
-        "deepseek-v4-pro": {
-          "name": "deepseek-v4-pro",
+        "group/glm-5.3-flash": {
+          "name": "glm-5.3-flash",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
           "limit": {
-            "context": 1024000,
-            "output": 65536
-          }
+            "context": 1000000,
+            "output": 131072
+          },
+          "body": {
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
         },
-        "kimi-k2.7-code": {
-          "name": "kimi-k2.8-preview",
+        "group/deepseek-v4.1-flash": {
+          "name": "deepseek-v4.1-flash",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 384000
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
+        },
+        "group/kimi-k3.1-pro": {
+          "name": "kimi-k3.1-pro",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
           "limit": {
             "context": 1000000,
             "output": 32000
           },
-          "modalities": {
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
         }
       }
     }
