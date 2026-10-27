@@ -1,6 +1,6 @@
 model = "gpt-6.1-sol"
 model_reasoning_effort = "high"
-model_context_window = 272000
+model_context_window = 372000
 
 sandbox_mode = "danger-full-access"
 approval_policy = "on-request"
