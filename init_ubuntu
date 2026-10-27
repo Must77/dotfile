@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
+cd "$(dirname "$(readlink -f "$0")")"
 
 if (( $# == 0 )); then
+    # 基础安装：常用包、ssh、nvm/node、tldr
     sudo apt update
     sudo apt install -y wget curl git htop mc screen tmux ufw vim telnet-ssl bison g++ build-essential openssh-server cmake locate ripgrep fd-find fzf jq bat sd unzip tcpdump net-tools avahi-daemon avahi-utils python3 tree sshpass
     sudo systemctl enable --now ssh
