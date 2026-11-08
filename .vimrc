@@ -6,8 +6,8 @@ set nocompatible
 " Turn on syntax highlighting.
 syntax on
 
-" Disable the default Vim startup message.
-set shortmess+=I
+" language aware indent
+filetype plugin indent on
 
 " Show lines
 set number
@@ -22,13 +22,16 @@ set backspace=indent,eol,start
 " hide buffer
 set hidden
 
-" display tab as four space width
-set tabstop=4
+" tabs display at 8 columns, you type four spaces
+set tabstop=8
 set shiftwidth=4
-set expandtab 
+set expandtab
 
 " inherit tab
-set autoindent 
+set autoindent
+
+" keep the file's own indent style
+set copyindent preserveindent
 
 " case-insensitive
 set ignorecase
@@ -38,10 +41,10 @@ set smartcase
 " 'Q' in normal mode enters Ex mode
 nmap Q <Nop>
 " jk --> <ESC>
-inoremap jk <ESC>  
+inoremap jk <ESC>
 
-" annoyed bell
-set noerrorbells visualbell t_vb=
+" no bell
+set belloff=all
 
 " mouse
 set mouse+=a
@@ -59,9 +62,6 @@ set showmatch
 set softtabstop=4
 set shiftround
 
-" show current mode
-set showmode
-
 " highlight search results
 set hlsearch
 
@@ -74,9 +74,6 @@ set showcmd
 " incremental search
 set incsearch
 
-" fast terminal
-set ttyfast
-
 " report all changes
 set report=0
 
@@ -86,3 +83,7 @@ set pastetoggle=<F2>
 " keep lines above/below cursor when scrolling
 set scrolloff=8
 
+" already defaults in modern vim, kept for reference
+set shortmess+=I
+set showmode
+set ttyfast
