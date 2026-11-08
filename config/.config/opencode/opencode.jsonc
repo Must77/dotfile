@@ -141,6 +141,35 @@
               }
             }
           ]
+        },
+        "qwen38-abl": {
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 65535,
+            "output": 8192
+          },
+          "variants": [
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            }
+          ]
         }
       }
     }
@@ -149,5 +178,16 @@
     "*": "allow",
     "doom_loop": "allow",
     "external_directory": "allow"
+  },
+  "mcp": {
+    "servers": {
+      "magpie": {
+        "type": "remote",
+        "url": "https://must77.me:9500/mcp/magpie/image",
+        "headers": {
+          "x-api-key": "REPLACE_WITH_YOUR_MAGPIE_KEY"
+        }
+      }
+    }
   }
 }
