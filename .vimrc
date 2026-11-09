@@ -22,8 +22,8 @@ set backspace=indent,eol,start
 " hide buffer
 set hidden
 
-" tabs display at 8 columns, you type four spaces
-set tabstop=8
+" display tab as four space width
+set tabstop=4
 set shiftwidth=4
 set expandtab
 
