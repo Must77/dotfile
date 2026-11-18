@@ -11,10 +11,10 @@
         "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
-        "maxInputTokens": 1000000,
+        "contextWindow": 1000000,
         "maxOutputTokens": 131072,
         "supportsReasoningEffort": ["high", "max"],
-        "defaultReasoningEffort": "max"
+        "defaultReasoningEffort": "high"
       },
       {
         "id": "group/glm-5.3-flash",
@@ -22,7 +22,7 @@
         "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
-        "maxInputTokens": 1000000,
+        "contextWindow": 1000000,
         "maxOutputTokens": 131072,
         "supportsReasoningEffort": ["high", "max"],
         "defaultReasoningEffort": "high"
@@ -33,7 +33,7 @@
         "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
-        "maxInputTokens": 1048576,
+        "contextWindow": 1000000,
         "maxOutputTokens": 384000,
         "supportsReasoningEffort": ["high", "max"],
         "defaultReasoningEffort": "high"
@@ -44,10 +44,21 @@
         "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
-        "maxInputTokens": 1000000,
+        "contextWindow": 256000,
         "maxOutputTokens": 32000,
         "supportsReasoningEffort": ["high", "max"],
-        "defaultReasoningEffort": "max"
+        "defaultReasoningEffort": "high"
+      },
+      {
+        "id": "qwen38-abl",
+        "name": "Qwen3.8 ABL",
+        "url": "https://must77.me:9500/v1/responses",
+        "toolCalling": true,
+        "vision": false,
+        "contextWindow": 96000,
+        "maxOutputTokens": 32000,
+        "supportsReasoningEffort": ["high", "max"],
+        "defaultReasoningEffort": "high"
       }
     ]
   }
