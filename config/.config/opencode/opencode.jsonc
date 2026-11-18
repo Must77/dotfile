@@ -154,7 +154,7 @@
           },
           "limit": {
             "context": 96000,
-            "output": 8192
+            "output": 32000
           },
           "variants": [
             {
