@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "devin": {
+    "org_id": "org-60fdc1a3816a489682c2c7f73156a714"
+  },
+  "shell": {
+    "setup_complete": true
+  },
+  "theme_mode": "dark",
+  "permission_mode": "dangerous",
+  "agent": {
+    "model": "swe-2-flash-medium",
+    "preferred_family_models": {
+      "swe-2-flash": "swe-2-flash-medium"
+    }
+  }
+}
