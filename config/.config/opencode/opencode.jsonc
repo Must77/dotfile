@@ -93,7 +93,7 @@
             ]
           },
           "limit": {
-            "context": 1048576,
+            "context": 1000000,
             "output": 384000
           },
           "variants": [
@@ -124,7 +124,7 @@
             ]
           },
           "limit": {
-            "context": 262144,
+            "context": 256000,
             "output": 32000
           },
           "variants": [
@@ -153,7 +153,7 @@
             ]
           },
           "limit": {
-            "context": 65535,
+            "context": 96000,
             "output": 8192
           },
           "variants": [
@@ -181,9 +181,17 @@
   },
   "mcp": {
     "servers": {
-      "magpie": {
+      "magpie-image": {
         "type": "remote",
         "url": "https://must77.me:9500/mcp/magpie/image",
+        "headers": {
+          "x-api-key": "REPLACE_WITH_YOUR_MAGPIE_KEY"
+        },
+        "codemode": false
+      },
+      "magpie-search": {
+        "type": "remote",
+        "url": "https://must77.me:9500/mcp/magpie/web-search",
         "headers": {
           "x-api-key": "REPLACE_WITH_YOUR_MAGPIE_KEY"
         }
