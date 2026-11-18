@@ -2,13 +2,13 @@
   {
     "name": "magpie",
     "vendor": "customendpoint",
-    "apiType": "chat-completions",
+    "apiType": "responses",
     "apiKey": "REPLACE_WITH_YOUR_MAGPIE_KEY",
     "models": [
       {
         "id": "group/glm-5.3",
         "name": "GLM 5.3",
-        "url": "https://must77.me:9500/v1/chat/completions",
+        "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
         "maxInputTokens": 1000000,
@@ -19,7 +19,7 @@
       {
         "id": "group/glm-5.3-flash",
         "name": "GLM 5.3 Flash",
-        "url": "https://must77.me:9500/v1/chat/completions",
+        "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
         "maxInputTokens": 1000000,
@@ -30,7 +30,7 @@
       {
         "id": "group/deepseek-v4.1-flash",
         "name": "DeepSeek V4.1 Flash",
-        "url": "https://must77.me:9500/v1/chat/completions",
+        "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
         "maxInputTokens": 1048576,
@@ -41,7 +41,7 @@
       {
         "id": "group/kimi-k3.1-pro",
         "name": "Kimi K3.1 Pro",
-        "url": "https://must77.me:9500/v1/chat/completions",
+        "url": "https://must77.me:9500/v1/responses",
         "toolCalling": true,
         "vision": true,
         "maxInputTokens": 1000000,
